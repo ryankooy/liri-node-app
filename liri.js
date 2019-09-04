@@ -37,6 +37,7 @@ function spotifyThis() {
             console.log('Artist: ' + data.tracks.items[i].artists[0].name);
             console.log('Song: ' + data.tracks.items[i].name);
             console.log('Album: ' + data.tracks.items[i].album.name);
+            console.log('Preview: ' + data.tracks.items[i].preview_url);
             console.log('--------------------------------------------');
         }
     });
@@ -74,7 +75,36 @@ function concertThis() {
 }
 
 function movieThis() {
-
+    var movie = process.argv.splice(3, process.argv.length - 1);
+    movie = movie.join('+');
+    axios.get('http://www.omdbapi.com/?t=' + movie + '&apikey=trilogy')
+        .then(function(resp) {
+            // console.log(resp.data);
+            console.log('Title: ' + resp.data.Title);
+            console.log('Year: ' + resp.data.Year);
+            console.log('IMDB Rating: ' + resp.data.Ratings[0].Value);
+            console.log('Rotten Tomatoes Rating: ' + resp.data.Ratings[1].Value);
+            console.log('Country: ' + resp.data.Country);
+            console.log('Language: ' + resp.data.Language);
+            console.log('Plot: ' + resp.data.Plot);
+            console.log('Actors: ' + resp.data.Actors);
+            console.log('--------------------------------------------');
+        })
+        .catch(function(err) {
+            if(err.resp) {
+                console.log("---------------Data---------------");
+                console.log(err.resp.data);
+                console.log("---------------Status---------------");
+                console.log(err.resp.status);
+                console.log("---------------Status---------------");
+                console.log(err.resp.headers);
+            } else if(err.request) {
+                console.log(err.request);
+            } else {
+                console.log('Error', err.message);
+            }
+            console.log(err.config);
+        });
 }
 
 function doThis() {
