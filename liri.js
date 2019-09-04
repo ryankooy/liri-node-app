@@ -7,15 +7,31 @@ var spotify = new Spotify(keys.spotify);
 var fs = require('fs');
 
 var command = process.argv[2];
+// var song = process.argv.splice(3, process.argv.length - 1);
+// song = song.join('+');
+// var movie = process.argv.splice(3, process.argv.length - 1);
+// movie = movie.join('+');
 
 switch(command) {
     case 'concert-this':
+        var artist = process.argv.splice(3, process.argv.length - 1);
+        artist = artist.join('+');
         concertThis();
         break;
     case 'spotify-this-song':
+        var song = process.argv.splice(3, process.argv.length - 1);
+        song = song.join('+');
+        if(!song) {
+            song = 'The Sign';
+        }
         spotifyThis();
         break;
     case 'movie-this':
+        var movie = process.argv.splice(3, process.argv.length - 1);
+        movie = movie.join('+');
+        if(!movie) {
+            movie = 'Mr. Nobody';
+        }
         movieThis();
         break;
     case 'do-what-it-says':
@@ -24,8 +40,6 @@ switch(command) {
 }
 
 function spotifyThis() {
-    var song = process.argv.splice(3, process.argv.length - 1);
-    song = song.join('+');
     spotify.search({
         type: 'track',
         query: song
@@ -44,8 +58,6 @@ function spotifyThis() {
 }
 
 function concertThis() {
-    var artist = process.argv.splice(3, process.argv.length - 1);
-    artist = artist.join('+');
     axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp")
         .then(function(resp) {
             console.log('Artist: ' + artist);
@@ -75,8 +87,6 @@ function concertThis() {
 }
 
 function movieThis() {
-    var movie = process.argv.splice(3, process.argv.length - 1);
-    movie = movie.join('+');
     axios.get('http://www.omdbapi.com/?t=' + movie + '&apikey=trilogy')
         .then(function(resp) {
             // console.log(resp.data);
@@ -108,5 +118,25 @@ function movieThis() {
 }
 
 function doThis() {
-
+    fs.readFile('random.txt', 'utf8', function(err, data) {
+        if(err) {
+            return console.log(err);
+        }
+        var itSays = data.substr(0, data.indexOf(','));
+        var thing = data.substr(data.indexOf('"'));
+        switch(itSays) {
+            case 'concert-this':
+                artist = thing;
+                concertThis();
+                break;
+            case 'spotify-this-song':
+                song = thing;
+                spotifyThis();
+                break;
+            case 'movie-this':
+                movie = thing;
+                movieThis();
+                break;
+        }
+    });
 }
