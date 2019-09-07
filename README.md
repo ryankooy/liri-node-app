@@ -1,5 +1,5 @@
 # Liri Node App
---------------------------------------------------
+
 ### This app is a search bot that retrieves song, concert, and movie information based on the user's input.
 
 
