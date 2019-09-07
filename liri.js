@@ -13,7 +13,7 @@ switch(command) {
         var artist = process.argv.splice(3, process.argv.length - 1);
         artist = artist.join('+');
         concertThis();
-        log();
+        // log();
         break;
     case 'spotify-this-song':
         var song = process.argv.splice(3, process.argv.length - 1);
@@ -22,7 +22,7 @@ switch(command) {
             song = 'The Sign';
         }
         spotifyThis();
-        log();
+        // log();
         break;
     case 'movie-this':
         var movie = process.argv.splice(3, process.argv.length - 1);
@@ -31,11 +31,11 @@ switch(command) {
             movie = 'Mr. Nobody';
         }
         movieThis();
-        log();
+        // log();
         break;
     case 'do-what-it-says':
         doThis();
-        log();
+        // log();
         break;
 }
 
@@ -62,19 +62,25 @@ function spotifyThis() {
 function concertThis() {
     axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp")
         .then(function(resp) {
+            var date;
+            var results = resp.data;
             console.log('Artist: ' + artist);
-            for (var i = 0; i < 20; i++) {
-                var date = moment(resp.data[i].datetime).format('L');
-                console.log('Venue: ' + resp.data[i].venue.name);
-                console.log('Location: ' + resp.data[i].venue.city + ', ' + resp.data[i].venue.country);
-                console.log('Date: ' + date);
-                console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+            if(results[1] !== undefined) {
+                for (var i = 0; i < 20; i++) {
+                    date = moment(results[i].datetime).format('L');
+                    console.log('Venue: ' + results[i].venue.name);
+                    console.log('Location: ' + results[i].venue.city + ', ' + results[i].venue.country);
+                    console.log('Date: ' + date);
+                    console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+                }
+            } else {
+                console.log('No shows to show.');
             }
         })
         .catch(function(err) {
             if(err.resp) {
                 console.log("---------------Data---------------");
-                console.log(err.resp.data);
+                console.log(err.results);
                 console.log("---------------Status---------------");
                 console.log(err.resp.status);
                 console.log("---------------Status---------------");
@@ -86,19 +92,24 @@ function concertThis() {
 function movieThis() {
     axios.get('http://www.omdbapi.com/?t=' + movie + '&apikey=trilogy')
         .then(function(resp) {
-            console.log('Title: ' + resp.data.Title);
-            console.log('Year: ' + resp.data.Year);
-            console.log('IMDB Rating: ' + resp.data.Ratings[0].Value);
-            console.log('Rotten Tomatoes Rating: ' + resp.data.Ratings[1].Value);
-            console.log('Country: ' + resp.data.Country);
-            console.log('Language: ' + resp.data.Language);
-            console.log('Plot: ' + resp.data.Plot);
-            console.log('Actors: ' + resp.data.Actors);
+            var results = resp.data;
+            if(results.Title !== undefined) {
+                console.log('Title: ' + results.Title);
+                console.log('Year: ' + results.Year);
+                console.log('IMDB Rating: ' + results.Ratings[0].Value);
+                console.log('Rotten Tomatoes Rating: ' + results.Ratings[1].Value);
+                console.log('Country: ' + results.Country);
+                console.log('Language: ' + results.Language);
+                console.log('Plot: ' + results.Plot);
+                console.log('Actors: ' + results.Actors);
+            } else {
+                console.log("I don't think that's a real movie.");
+            }
         })
         .catch(function(err) {
             if(err.resp) {
                 console.log("---------------Data---------------");
-                console.log(err.resp.data);
+                console.log(err.results);
                 console.log("---------------Status---------------");
                 console.log(err.resp.status);
                 console.log("---------------Status---------------");
@@ -131,8 +142,8 @@ function doThis() {
     });
 }
 
-function log() {
-    fs.appendFile('log.txt', command + '\n', function(err) {
+function log(e) {
+    fs.appendFile('log.txt', e + '\n', function(err) {
         if(err) {
             return console.log(err);
         }
