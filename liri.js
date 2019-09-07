@@ -13,6 +13,7 @@ switch(command) {
         var artist = process.argv.splice(3, process.argv.length - 1);
         artist = artist.join('+');
         concertThis();
+        log();
         break;
     case 'spotify-this-song':
         var song = process.argv.splice(3, process.argv.length - 1);
@@ -21,6 +22,7 @@ switch(command) {
             song = 'The Sign';
         }
         spotifyThis();
+        log();
         break;
     case 'movie-this':
         var movie = process.argv.splice(3, process.argv.length - 1);
@@ -29,9 +31,11 @@ switch(command) {
             movie = 'Mr. Nobody';
         }
         movieThis();
+        log();
         break;
     case 'do-what-it-says':
         doThis();
+        log();
         break;
 }
 
@@ -109,20 +113,28 @@ function doThis() {
             return console.log(err);
         }
         var itSays = data.substr(0, data.indexOf(','));
-        var thing = data.substr(data.indexOf('"'));
+        var name = data.substr(data.indexOf('"'));
         switch(itSays) {
             case 'concert-this':
-                artist = thing;
+                artist = name;
                 concertThis();
                 break;
             case 'spotify-this-song':
-                song = thing;
+                song = name;
                 spotifyThis();
                 break;
             case 'movie-this':
-                movie = thing;
+                movie = name;
                 movieThis();
                 break;
+        }
+    });
+}
+
+function log() {
+    fs.appendFile('log.txt', command + '\n', function(err) {
+        if(err) {
+            return console.log(err);
         }
     });
 }
