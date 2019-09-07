@@ -10,4 +10,4 @@ activity-8
 * Clearly list the technologies used in the app
 * State your role in the app development
 
-![the 'spotify-this-song' command](https://gph.is/g/4AQYwbN)
+![the 'spotify-this-song' command](https://media.giphy.com/media/Y2hvAPdKuNCGwB26lk/giphy.gif)
