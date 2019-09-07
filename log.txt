@@ -388,3 +388,136 @@ Location: Mexico City, Mexico
 Date: 11/30/2019
 
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Venue: Hertz Arena
+
+Location: Estero, United States
+
+Date: 09/19/2019
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Venue: Amalie Arena
+
+Location: Tampa, United States
+
+Date: 09/21/2019
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Venue: Amway Center
+
+Location: Orlando, United States
+
+Date: 09/22/2019
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Venue: Bon Secours Wellness Arena
+
+Location: Greenville, United States
+
+Date: 09/24/2019
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Venue: Big Sandy Superstore Arena
+
+Location: Huntington, United States
+
+Date: 09/27/2019
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Venue: Louder Than Life @ Kentucky Fair and Expo Center
+
+Location: Louisville, United States
+
+Date: 09/29/2019
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Venue: Dow Event Center
+
+Location: Saginaw, United States
+
+Date: 10/01/2019
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Venue: Wolstein Center
+
+Location: Cleveland, United States
+
+Date: 10/02/2019
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Venue: Giant Center
+
+Location: Hershey, United States
+
+Date: 10/04/2019
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Venue: Mohegan Sun Arena At Casey Plaza
+
+Location: Wilkes Barre, United States
+
+Date: 10/05/2019
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Venue: Allen County War Memorial Coliseum
+
+Location: Fort Wayne, United States
+
+Date: 10/07/2019
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Venue: U.S. Cellular Center
+
+Location: Cedar Rapids, United States
+
+Date: 10/09/2019
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Venue: Chaifetz Arena
+
+Location: St Louis, United States
+
+Date: 10/11/2019
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Venue: AT&T Center
+
+Location: San Antonio, United States
+
+Date: 09/07/2019
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Venue: Toyota Center
+
+Location: Houston, United States
+
+Date: 09/08/2019
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Venue: Talking Stick Resort Arena
+
+Location: Phoenix, United States
+
+Date: 09/10/2019
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Venue: Viejas Arena
+
+Location: San Diego, United States
+
+Date: 09/11/2019
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Venue: The Forum
+
+Location: Los Angeles, United States
+
+Date: 09/13/2019
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Venue: The Forum
+
+Location: Los Angeles, United States
+
+Date: 09/14/2019
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

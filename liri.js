@@ -1,3 +1,4 @@
+// implementing modules
 var Spotify = require('node-spotify-api');
 var axios = require('axios');
 var moment = require('moment');
@@ -6,14 +7,14 @@ var keys = require('./keys.js');
 var spotify = new Spotify(keys.spotify);
 var fs = require('fs');
 
+// capturing user's command-line input
 var command = process.argv[2];
-var divider = '\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n';
 
+// running the function that corresponds to a user's argument
 switch(command) {
     case 'concert-this':
         var artist = process.argv.slice(3).join(' ');
         concertThis();
-        // log();
         break;
     case 'spotify-this-song':
         var song = process.argv.slice(3).join(' ');
@@ -21,7 +22,6 @@ switch(command) {
             song = 'The Sign';
         }
         spotifyThis();
-        // log();
         break;
     case 'movie-this':
         var movie = process.argv.slice(3).join(' ');
@@ -29,14 +29,13 @@ switch(command) {
             movie = 'Mr. Nobody';
         }
         movieThis();
-        // log();
         break;
     case 'do-what-it-says':
         doThis();
-        // log();
         break;
 }
 
+// function that accesses the Spotify API and returns defined results relating to the song name
 function spotifyThis() {
     spotify.search({
         type: 'track',
@@ -56,18 +55,17 @@ function spotifyThis() {
                 '=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n'
             ].join('\n\n');
             console.log(info);
+            // logs results to log.txt
             fs.appendFile('log.txt', info, function(err) {
                 if(err) {
                     return console.log(err);
                 }
             });
-            // if(results.preview_url !== null) {
-            //     console.log('Preview: ' + results.preview_url);
-            // }
         }
     });
 }
 
+// function that accesses the Bands In Town API and returns defined results relating to the artist name
 function concertThis() {
     axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp")
         .then(function(resp) {
@@ -84,6 +82,7 @@ function concertThis() {
                         '=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n'
                     ].join('\n\n');
                     console.log(info);
+                    // logs results to log.txt
                     fs.appendFile('log.txt', info, function(err) {
                         if(err) {
                             return console.log(err);
@@ -106,6 +105,7 @@ function concertThis() {
         });
 }
 
+// function that accesses the OMDB API and returns defined results relating to the movie name
 function movieThis() {
     axios.get('http://www.omdbapi.com/?t=' + movie + '&apikey=trilogy')
         .then(function(resp) {
@@ -122,6 +122,7 @@ function movieThis() {
                     'Actors: ' + results.Actors
                 ].join('\n\n');
                 console.log(info);
+                // logs results to log.txt
                 fs.appendFile('log.txt', info, function(err) {
                     if(err) {
                         return console.log(err);
@@ -143,6 +144,7 @@ function movieThis() {
         });
 }
 
+// function that uses text from random.txt to call one of the primary functions
 function doThis() {
     fs.readFile('random.txt', 'utf8', function(err, data) {
         if(err) {
