@@ -7,17 +7,16 @@ var spotify = new Spotify(keys.spotify);
 var fs = require('fs');
 
 var command = process.argv[2];
+var divider = '\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n';
 
 switch(command) {
     case 'concert-this':
-        var artist = process.argv.splice(3, process.argv.length - 1);
-        artist = artist.join('+');
+        var artist = process.argv.slice(3).join(' ');
         concertThis();
         // log();
         break;
     case 'spotify-this-song':
-        var song = process.argv.splice(3, process.argv.length - 1);
-        song = song.join('+');
+        var song = process.argv.slice(3).join(' ');
         if(!song) {
             song = 'The Sign';
         }
@@ -25,8 +24,7 @@ switch(command) {
         // log();
         break;
     case 'movie-this':
-        var movie = process.argv.splice(3, process.argv.length - 1);
-        movie = movie.join('+');
+        var movie = process.argv.slice(3).join(' ');
         if(!movie) {
             movie = 'Mr. Nobody';
         }
@@ -44,17 +42,29 @@ function spotifyThis() {
         type: 'track',
         query: song
     }, function(err, data) {
+        var preview;
+        var info;
         if(err) {
             return console.log(err);
         }
-        for (var i = 0; i < 20; i++) {
-            console.log('Artist: ' + data.tracks.items[i].artists[0].name);
-            console.log('Song: ' + data.tracks.items[i].name);
-            console.log('Album: ' + data.tracks.items[i].album.name);
-            if(data.tracks.items[i].preview_url !== null) {
-                console.log('Preview: ' + data.tracks.items[i].preview_url);
-            }
-            console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+        for (var i = 0; i < 10; i++) {
+            var results = data.tracks.items[i];
+            info = [
+                'Artist: ' + results.artists[0].name,
+                'Song: ' + results.name,
+                'Album: ' + results.album.name,
+                'Preview: ' + results.preview_url,
+                '=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n'
+            ].join('\n\n');
+            console.log(info);
+            fs.appendFile('log.txt', info, function(err) {
+                if(err) {
+                    return console.log(err);
+                }
+            });
+            // if(results.preview_url !== null) {
+            //     preview = 'Preview: ' + results.preview_url;
+            // }
         }
     });
 }
@@ -66,12 +76,20 @@ function concertThis() {
             var results = resp.data;
             console.log('Artist: ' + artist);
             if(results[1] !== undefined) {
-                for (var i = 0; i < 20; i++) {
+                for (var i = 0; i < 15; i++) {
                     date = moment(results[i].datetime).format('L');
-                    console.log('Venue: ' + results[i].venue.name);
-                    console.log('Location: ' + results[i].venue.city + ', ' + results[i].venue.country);
-                    console.log('Date: ' + date);
-                    console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+                    info = [
+                        'Venue: ' + results[i].venue.name,
+                        'Location: ' + results[i].venue.city + ', ' + results[i].venue.country,
+                        'Date: ' + date,
+                        '=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n'
+                    ].join('\n\n');
+                    console.log(info);
+                    fs.appendFile('log.txt', info, function(err) {
+                        if(err) {
+                            return console.log(err);
+                        }
+                    });
                 }
             } else {
                 console.log('No shows to show.');
@@ -94,14 +112,22 @@ function movieThis() {
         .then(function(resp) {
             var results = resp.data;
             if(results.Title !== undefined) {
-                console.log('Title: ' + results.Title);
-                console.log('Year: ' + results.Year);
-                console.log('IMDB Rating: ' + results.Ratings[0].Value);
-                console.log('Rotten Tomatoes Rating: ' + results.Ratings[1].Value);
-                console.log('Country: ' + results.Country);
-                console.log('Language: ' + results.Language);
-                console.log('Plot: ' + results.Plot);
-                console.log('Actors: ' + results.Actors);
+                var info = [
+                    'Title: ' + results.Title,
+                    'Year: ' + results.Year,
+                    'IMDB Rating: ' + results.Ratings[0].Value,
+                    'Rotten Tomatoes Rating: ' + results.Ratings[1].Value,
+                    'Country: ' + results.Country,
+                    'Language: ' + results.Language,
+                    'Plot: ' + results.Plot,
+                    'Actors: ' + results.Actors
+                ].join('\n\n');
+                console.log(info);
+                fs.appendFile('log.txt', info, function(err) {
+                    if(err) {
+                        return console.log(err);
+                    }
+                });
             } else {
                 console.log("I don't think that's a real movie.");
             }
@@ -138,14 +164,6 @@ function doThis() {
                 movie = name;
                 movieThis();
                 break;
-        }
-    });
-}
-
-function log(e) {
-    fs.appendFile('log.txt', e + '\n', function(err) {
-        if(err) {
-            return console.log(err);
         }
     });
 }
