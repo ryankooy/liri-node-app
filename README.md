@@ -12,8 +12,8 @@ activity-8
 
 ![the 'spotify-this-song' command](https://media.giphy.com/media/Y2hvAPdKuNCGwB26lk/giphy.gif)
 
-![the 'concert-this' command]()
+![the 'concert-this' command](https://media.giphy.com/media/eMDz5RbxdTtlcosaOn/giphy.gif)
 
-![the 'movie-this' command]()
+![the 'movie-this' command](https://media.giphy.com/media/gHQCdj8i3nSHC8xWfx/giphy.gif)
 
-![the 'do-what-it-says' command]()
+![the 'do-what-it-says' command](https://media.giphy.com/media/SUczF0kBZWgh37cb5j/giphy.gif)
