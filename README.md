@@ -11,3 +11,5 @@ activity-8
 * State your role in the app development
 
 ![the 'spotify-this-song' command](https://media.giphy.com/media/Y2hvAPdKuNCGwB26lk/giphy.gif)
+
+![the 'spotify-this-song' command](https://giphy.com/gifs/Y2hvAPdKuNCGwB26lk/html5)
