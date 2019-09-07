@@ -9,3 +9,5 @@ activity-8
 * Contain a link to a deployed version of the app
 * Clearly list the technologies used in the app
 * State your role in the app development
+
+![the 'spotify-this-song' command](https://gph.is/g/4AQYwbN)
