@@ -42,7 +42,6 @@ function spotifyThis() {
         type: 'track',
         query: song
     }, function(err, data) {
-        var preview;
         var info;
         if(err) {
             return console.log(err);
@@ -63,7 +62,7 @@ function spotifyThis() {
                 }
             });
             // if(results.preview_url !== null) {
-            //     preview = 'Preview: ' + results.preview_url;
+            //     console.log('Preview: ' + results.preview_url);
             // }
         }
     });
@@ -74,7 +73,7 @@ function concertThis() {
         .then(function(resp) {
             var date;
             var results = resp.data;
-            console.log('Artist: ' + artist);
+            console.log('Artist: ' + artist + '\n');
             if(results[1] !== undefined) {
                 for (var i = 0; i < 15; i++) {
                     date = moment(results[i].datetime).format('L');
