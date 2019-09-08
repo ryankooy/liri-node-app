@@ -12,7 +12,8 @@ After installing the required NPMs within Node (related modules and technologies
 
 ### Spotify-This-Song
 
-By typing 
+If a user types ´node liri spotify-this-song <song title>´ in the command line, Liri will respond by displaying the 10 most relevant results.
+ Each result is comprised of the artist's name, the song title, the album containing the song, and, if available, a link to a Spotify preview of the track.
 
 ![the 'spotify-this-song' command](https://media.giphy.com/media/Y2hvAPdKuNCGwB26lk/giphy.gif)
 
