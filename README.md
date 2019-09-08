@@ -1,9 +1,8 @@
 # Liri Node App
 
-### This app is a search bot that retrieves song, concert, and movie information based on the user's input.
+### This app is a search bot that retrieves song, concert, and movie information based on a user's input from the command line.
 
-
-* Clearly state the problem the app is trying to solve (i.e. what is it doing and why)
+Liri Node App is primarily composed of two JavaScript files, liri.js and keys.js, with liri.js containing the executable functions and keys.js s
 * Give a high-level overview of how the app is organized
 * Give start-to-finish instructions on how to run the app
 * Clearly list the technologies used in the app
