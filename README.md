@@ -2,9 +2,9 @@
 
 ### This app is a search bot that retrieves song, concert, and movie data based on a user's input from the command line.
 
-Liri Node App is primarily composed of two JavaScript files, liri.js and keys.js, with liri.js containing the executable functions, and keys.js exporting the related Spotify API keys. 
+Liri Node App is primarily composed of two JavaScript files, liri.js and keys.js, with liri.js containing the executable functions, and keys.js exporting the related Spotify API keys. Additionally, Liri contains the package files that make its functionality possible.
 
-## Instructions For Running This App
+## Instructions For Running Liri
 
 After installing the required modules and packages within Node.js (related npm technologies are listed below), a user is able to type an argument followed by a desired query name. The required format for user input is `node liri <argument> <search item>`.
 
@@ -31,6 +31,10 @@ For finding movie stats with Liri, a user types `node liri movie-this <movie tit
 Liri provides a feature called Do-What-It-Says, which reads content from a text file named random.txt and executes any argument and query term that is present. The text must contain one of the arguments discussed above, followed by a comma, then a search term surrounded by quotes. A user simply types `node liri do-what-it-says` to utilize this feature.
 
 ![the 'do-what-it-says' argument](https://media.giphy.com/media/SUczF0kBZWgh37cb5j/giphy.gif)
+
+### log.txt
+
+In addition to printing all arguments' results to the command line, Liri logs the data as text to log.txt, allowing a user to access a receipt of all prior searches.
 
 ## Technologies Used
 
