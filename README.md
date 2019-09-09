@@ -4,7 +4,7 @@
 
 Liri Node App is primarily composed of two JavaScript files, liri.js and keys.js, with liri.js containing the executable functions, and keys.js exporting the related Spotify API keys. 
 
-## Instructions For Running App
+## Instructions For Running This App
 
 After installing the required NPMs within Node.js (related modules and technologies are listed below), a user is able to type an argument followed by a desired query name. The required format for user input is `node liri <argument> <search item>`.
 
@@ -22,7 +22,7 @@ When a user inputs `node liri concert-this <artist name>`, Liri requests data fr
 
 ### Movie-This
 
-For finding movie stats with Liri, a user types `node liri movie-this <movie title>`.
+For finding movie stats with Liri, a user types `node liri movie-this <movie title>`. This argument requests data from the OMDB API, and displays various information about the movie including averaged critic ratings from IMDB and Rotten Tomatoes. If the queried movie is not found, the user will be alerted by a message.
 
 ![the 'movie-this' argument](https://media.giphy.com/media/gHQCdj8i3nSHC8xWfx/giphy.gif)
 
