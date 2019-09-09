@@ -6,7 +6,7 @@ Liri Node App is primarily composed of two JavaScript files, liri.js and keys.js
 
 ## Instructions For Running This App
 
-After installing the required NPMs within Node.js (related modules and technologies are listed below), a user is able to type an argument followed by a desired query name. The required format for user input is `node liri <argument> <search item>`.
+After installing the required modules and packages within Node.js (related npm technologies are listed below), a user is able to type an argument followed by a desired query name. The required format for user input is `node liri <argument> <search item>`.
 
 ### Spotify-This-Song
 
@@ -28,17 +28,17 @@ For finding movie stats with Liri, a user types `node liri movie-this <movie tit
 
 ### Do-What-It-Says
 
-Liri provides a feature called Do-What-It-Says, which reads content from a text file named random.txt and executes any argument and query term that is present. The text must contain one of the arguments discussed above, followed by a comma, then a search term surrounded by quotes. One must simply type `node liri do-what-it-says` to utilize this feature.
+Liri provides a feature called Do-What-It-Says, which reads content from a text file named random.txt and executes any argument and query term that is present. The text must contain one of the arguments discussed above, followed by a comma, then a search term surrounded by quotes. A user simply types `node liri do-what-it-says` to utilize this feature.
 
 ![the 'do-what-it-says' argument](https://media.giphy.com/media/SUczF0kBZWgh37cb5j/giphy.gif)
 
 ## Technologies Used
 
-The Liri Node App is dependent on multiple modules and technologies, incorporating:
+The Liri Node App is dependent on multiple modules, packages, and technologies, incorporating:
 
-* Node.js
-* Node-Spotify-API
-* Axios
-* fs
-* Moment.js
-* DotEnv
+* Node.js, the CLI
+* Node-Spotify-API, the package for accessing Spotify's API
+* Axios, for "getting" data from the Bands In Town and OMDB APIs
+* fs, the module for reading and writing text in separate files
+* Moment.js, the package for Liri's date formatting
+* DotEnv, for securely storing the Spotify package's client id and secret
