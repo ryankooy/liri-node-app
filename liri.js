@@ -47,13 +47,23 @@ function spotifyThis() {
         }
         for (var i = 0; i < 10; i++) {
             var results = data.tracks.items[i];
-            info = [
-                'Artist: ' + results.artists[0].name,
-                'Song: ' + results.name,
-                'Album: ' + results.album.name,
-                'Preview: ' + results.preview_url,
-                '=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n'
-            ].join('\n\n');
+            var preview = results.preview_url;
+            if(preview !== null) {
+                info = [
+                    'Artist: ' + results.artists[0].name,
+                    'Song: ' + results.name,
+                    'Album: ' + results.album.name,
+                    'Preview: ' + preview,
+                    '=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n'
+                ].join('\n\n');
+            } else {
+                info = [
+                    'Artist: ' + results.artists[0].name,
+                    'Song: ' + results.name,
+                    'Album: ' + results.album.name,
+                    '=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n'
+                ].join('\n\n');
+            }
             console.log(info);
             // logs results to log.txt
             fs.appendFile('log.txt', info, function(err) {
