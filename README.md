@@ -37,6 +37,8 @@ Liri provides a feature called Do-What-It-Says, which reads content from a text 
 The Liri Node App is dependent on multiple modules and technologies, incorporating:
 
 * Node.js
-* NPM
+* Node-Spotify-API
 * Axios
 * fs
+* Moment.js
+* DotEnv
