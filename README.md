@@ -43,6 +43,6 @@ The Liri Node App is dependent on multiple modules, packages, and technologies, 
 * **Node.js**, the CLI
 * **Node-Spotify-API**, the package for accessing Spotify's API
 * **Axios**, for "getting" data from the Bands In Town and OMDB APIs
-* **f**, the module for reading and writing text in separate files
+* **fs**, the module for reading and writing text in separate files
 * **Moment.js**, the package for Liri's date formatting
 * **DotEnv**, for securely storing the Spotify package's client id and secret
