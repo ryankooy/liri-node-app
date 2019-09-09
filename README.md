@@ -1,6 +1,6 @@
 # Liri Node App
 
-### This app is a search bot that retrieves song, concert, and movie information based on a user's input from the command line.
+### This app is a search bot that retrieves song, concert, and movie data based on a user's input from the command line.
 
 Liri Node App is primarily composed of two JavaScript files, liri.js and keys.js, with liri.js containing the executable functions, and keys.js exporting the related Spotify API keys. 
 
@@ -34,4 +34,9 @@ Liri provides a feature called Do-What-It-Says, which reads content from a text 
 
 ## Technologies Used
 
-* Clearly list the technologies used in the app
+The Liri Node App is dependent on multiple modules and technologies, incorporating:
+
+* Node.js
+* NPM
+* Axios
+* fs
