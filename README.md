@@ -6,7 +6,7 @@ Liri Node App is primarily composed of two JavaScript files, *liri.js* and *keys
 
 ## Instructions For Running Liri
 
-After installing the required modules and packages within Node.js (related npm technologies are listed below), a user is able to type an argument followed by a desired query name. The required format for user input is `node liri <argument> <search item>`.
+After installing the required modules and packages within Node.js (related npm technologies are listed below), a user is able to type a command followed by a desired query name. The required format for user input is `node liri <command> <search item>`.
 
 ### Spotify-This-Song
 
@@ -16,7 +16,7 @@ To utilize the Spotify song search feature, a user must type `node liri spotify-
 
 ### Concert-This
 
-When a user inputs `node liri concert-this <artist name>`, Liri requests data from the Bands In Town API, returning information about the next 15 concert dates for the selected artist, and then populates that data within the CLI; venue names and locations are included in these results. The user is notified if no shows are found.
+When a user inputs `node liri concert-this <artist name>`, Liri requests data from the Bands In Town API, returning information about the next 15 concert dates for the selected artist, and then displays the data; venue names and locations are included in these results. The user is notified if no shows are found.
 
 ![the 'concert-this' command](https://media.giphy.com/media/eMDz5RbxdTtlcosaOn/giphy.gif)
 
@@ -34,7 +34,7 @@ Liri provides a feature called Do-What-It-Says, which reads content from a text 
 
 ### log.txt
 
-In addition to printing all arguments' results to the command line, Liri logs the data as text to *log.txt*, allowing a user to access a receipt of all prior searches.
+In addition to displaying any results, Liri logs the data as text to *log.txt*, allowing a user to access a receipt of all prior searches.
 
 ## Technologies Used
 
