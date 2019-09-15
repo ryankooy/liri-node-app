@@ -1,6 +1,6 @@
 # Liri Node App
 
-### This app is a search bot that retrieves song, concert, and movie data based on a user's input from the command line.
+### This app is a search utility that retrieves song, concert, and movie data based on a user's input from the command line.
 
 Liri Node App is primarily composed of two JavaScript files, *liri.js* and *keys.js*, with *liri.js* containing the executable functions, and *keys.js* exporting the related Spotify API keys. Additionally, Liri contains the package files that make its functionality possible.
 
@@ -16,25 +16,25 @@ To utilize the Spotify song search feature, a user must type `node liri spotify-
 
 ### Concert-This
 
-When a user inputs `node liri concert-this <artist name>`, Liri requests data from the Bands In Town API, returning information about the next 15 concert dates for the selected artist, and then displays the data; venue names and locations are included in these results. The user is notified if no shows are found.
+When a user inputs `node liri concert-this <artist name>`, Liri requests data from the Bands In Town API, returning information about the next 15 concert dates for the selected artist, and then outputs the data; venue names and locations are included in these results. The user is notified if no shows are found.
 
 ![the 'concert-this' command](https://media.giphy.com/media/eMDz5RbxdTtlcosaOn/giphy.gif)
 
 ### Movie-This
 
-For finding movie stats with Liri, a user types `node liri movie-this <movie title>`. This argument requests data from the OMDB API, and displays various information about the movie including averaged critic ratings from IMDB and Rotten Tomatoes. If the queried movie is not found, the user will be alerted by a message.
+For finding movie stats with Liri, a user types `node liri movie-this <movie title>`. This command requests data from the OMDB API, and displays information about the movie including averaged critic ratings from IMDB and Rotten Tomatoes. If the queried movie is not found, the user will be alerted by a message.
 
 ![the 'movie-this' command](https://media.giphy.com/media/gHQCdj8i3nSHC8xWfx/giphy.gif)
 
 ### Do-What-It-Says
 
-Liri provides a feature called Do-What-It-Says, which reads content from a text file named *random.txt* and executes any argument and query term that is present. The text must contain one of the arguments discussed above, followed by a comma, then a search term surrounded by quotes. A user simply types `node liri do-what-it-says` to utilize this feature.
+Liri provides a feature called Do-What-It-Says, which reads content from a text file named *random.txt* and executes any command/query-term pair present. The text must contain one of the commands discussed above, followed by a comma, and finally, a search term within quotes. A user simply types `node liri do-what-it-says` to utilize this feature.
 
 ![the 'do-what-it-says' commands](https://media.giphy.com/media/SUczF0kBZWgh37cb5j/giphy.gif)
 
 ### log.txt
 
-In addition to displaying any results, Liri logs the data as text to *log.txt*, allowing a user to access a receipt of all prior searches.
+In addition to displaying results, Liri logs a copy of the data as text to *log.txt*, allowing a user to access a receipt of all prior searches.
 
 ## Technologies Used
 
